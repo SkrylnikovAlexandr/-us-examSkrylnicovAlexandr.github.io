@@ -1,0 +1,7 @@
+/* Стили для логотипа в навигационной панели */
+.logo {
+  height: 10px;
+  margin-right: 15px;
+}
+max-width: 100%;
+height: auto;
