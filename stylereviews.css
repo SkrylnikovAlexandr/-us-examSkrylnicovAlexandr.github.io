@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #212529; /* Сделаем текст читаемым */
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+blockquote {
+    font-style: italic;
+    background: #e9ecef;
+    padding: 15px;
+    border-left: 5px solid #007bff;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.audio-review, .audio-upload {
+    margin-top: 20px;
+}
+
+.audio-review audio {
+    width: 100%;
+    max-width: 400px;
+}
+
+.audio-upload input, .audio-upload button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.audio-upload button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.audio-upload button:hover {
+    background-color: #218838;
+}
+
+/* Кнопка записи */
+.record-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.record-button:hover {
+    background-color: #c82333;
+}
