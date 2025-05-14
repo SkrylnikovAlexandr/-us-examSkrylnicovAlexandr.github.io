@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylereviews.css">
+</head>
+<body class="catalog-body">
+    <nav class="catalog-nav-container">
+        <img src="logo.png" alt="ShopTalk Forum" class="logo">
+
+        <!-- Кнопка-гамбургер -->
+        <span class="catalog-menu-toggle" onclick="toggleMenu()">☰ Меню</span>
+
+        <!-- Навигация -->
+        <div class="catalog-nav-links" id="navLinks">
+            <a href="index.html">Главная</a>
+            <a href="shop.html">Каталог</a>
+            <a href="forum.html">Форум</a>
+            <a href="reviews.html">Отзывы</a>
+            <a href="discounts.html">Скидки</a>
+            <a href="about.html">О нас</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="form.html" class="register-button">Регистрация</a>
+        </div>
+    </nav>
+
+    <div class="catalog-container">
+        <h1>Отзывы</h1>
+        <p>Что говорят наши клиенты:</p>
+        <blockquote>"Отличный сервис, быстрая доставка!"</blockquote>
+        <blockquote>"Товары высокого качества, рекомендую!"</blockquote>
+        
+        <div class="audio-review">
+            <h2>Голосовые отзывы</h2>
+            <audio controls>
+                <source src="otzyv.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает аудиоэлемент.
+            </audio>
+        </div>
+        
+        <div class="audio-upload">
+            <h2>Оставьте голосовой отзыв</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <input type="file" accept="audio/*" name="audio-review" required>
+                <button type="submit">Отправить</button>
+            </form>
+            <button class="record-button" onclick="startRecording()">🎤 Записать отзыв</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("show");
+        }
+
+        function startRecording() {
+            alert("Функция записи еще не реализована, но вы можете загрузить аудиофайл!");
+        }
+    </script>
+</body>
+</html>
