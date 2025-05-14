@@ -3,7 +3,7 @@ body {
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
-    color: #212529; /* Сделаем текст читаемым */
+    color: #212529; 
 }
 
 .container {
@@ -68,4 +68,54 @@ blockquote {
 
 .record-button:hover {
     background-color: #c82333;
+}
+
+/* Гамбургер-меню */
+.catalog-menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: auto;
+    padding: 10px;
+}
+
+/* Ссылки навигации по умолчанию */
+.catalog-nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* Мобильный режим */
+@media (max-width: 768px) {
+    .catalog-menu-toggle {
+        display: block;
+    }
+
+ .catalog-nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #212529; /* плотный тёмный фон */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 999;
+}
+
+.catalog-nav-links.show {
+    display: flex;
+}
+
+.catalog-nav-links a {
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #212529;
+    transition: background 0.3s;
+}
+
+.catalog-nav-links a:hover {
+    background-color: #343a40;
 }
