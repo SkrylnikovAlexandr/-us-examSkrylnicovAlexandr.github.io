@@ -1,0 +1,39 @@
+/* hamburger.css */
+
+/* Стили для меню-гамбургера */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Скрытие гамбургера для десктопной версии */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #343a40;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
