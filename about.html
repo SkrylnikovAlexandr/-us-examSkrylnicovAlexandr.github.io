@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О себе</title>
+</head>
+<body>
+
+    <nav class="nav-container">
+    <img src="logo.png" alt="ShopTalk Forum" class="logo">
+
+    <!-- Кнопка-гамбургер -->
+    <span class="menu-toggle" onclick="toggleMenu()">☰ Меню</span>
+
+    <!-- Навигация -->
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="shop.html">Каталог</a>
+        <a href="forum.html">Форум</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="discounts.html">Скидки</a>
+        <a href="about.html">О нас</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="form.html" class="register-button">Регистрация</a>
+    </div>
+</nav>
+
+
+    <h1>О себе</h1>
+<!-- <img src="images/me.jpg" alt="Фото автора сайта" id="profile-photo" loading="lazy"> -->
+
+    <p>Сайт разработан студентом группы АПО-23: Скрыльников А.А.</p>
+
+    <!-- Элемент, в который скрипт будет подставлять текст -->
+    <p id="info-text">Если хотите узнать обо мне больше нажмите кнопку подробнее.</p>
+
+    <!-- Кнопка для переключения текста -->
+    <button onclick="toggleInfo()">Подробнее</button>
+
+    <script src="about1.js"></script>
+</body>
+</html>
