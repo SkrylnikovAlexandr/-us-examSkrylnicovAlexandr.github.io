@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотогалерея - Форум</title>
+    <link rel="stylesheet" href="stylesgallery.css">
+    <link rel="stylesheet" href="logo.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav-container">
+    <img src="logo.png" alt="ShopTalk Forum" class="logo">
+
+    <!-- Кнопка-гамбургер -->
+    <span class="menu-toggle" onclick="toggleMenu()">☰ Меню</span>
+
+    <!-- Навигация -->
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="shop.html">Каталог</a>
+        <a href="forum.html">Форум</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="discounts.html">Скидки</a>
+        <a href="about.html">О нас</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="form.html" class="register-button">Регистрация</a>
+    </div>
+</nav>
+
+
+    <div class="container">
+        <h1>Фотогалерея</h1>
+        <div class="gallery">
+            <a href="images/photo1_large.jpg" target="_blank">
+                <img src="images/photo1_small.jpg" alt="Фото 1">
+            </a>
+            <a href="images/photo2_large.jpg" target="_blank">
+                <img src="images/photo2_small.jpg" alt="Фото 2">
+            </a>
+            <a href="images/photo3_large.jpg" target="_blank">
+                <img src="images/photo3_small.jpg" alt="Фото 3">
+            </a>
+            <a href="images/photo4_large.jpg" target="_blank">
+                <img src="images/photo4_small.jpg" alt="Фото 4">
+            </a>
+            <a href="images/photo5_large.jpg" target="_blank">
+                <img src="images/photo5_small.jpg" alt="Фото 5">
+            </a>
+            <a href="images/photo6_large.jpg" target="_blank">
+                <img src="images/photo6_small.jpg" alt="Фото 1">
+            </a>
+            <a href="images/photo7_large.jpg" target="_blank">
+                <img src="images/photo7_small.jpg" alt="Фото 2">
+            </a>
+            <a href="images/photo8_large.jpg" target="_blank">
+                <img src="images/photo8_small.jpg" alt="Фото 3">
+            </a>
+            <a href="images/photo9_large.jpg" target="_blank">
+                <img src="images/photo9_small.jpg" alt="Фото 4">
+            </a>
+            <a href="images/photo10_large.jpg" target="_blank">
+                <img src="images/photo10_small.jpg" alt="Фото 5">
+            </a>
+        </div>
+<div class="photo-actions">
+      <!-- Загрузка фото -->
+      <input type="file" id="upload-photo" accept="image/*" hidden />
+      <button onclick="document.getElementById('upload-photo').click()">Загрузить фото</button>
+
+      <!-- Предпросмотр и скачивание -->
+      <img id="preview-photo" src="#" alt="Предпросмотр" />
+      <a id="download-link" href="#" download="photo.jpg" style="display: none">
+        <button>Скачать фото</button>
+      </a>
+    </div>
+  </div>
+    </div>
+</body>
+</html>
