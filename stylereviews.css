@@ -75,7 +75,7 @@ blockquote {
     display: none;
     cursor: pointer;
     font-size: 18px;
-    margin-left: auto;
+    margin-left: -10px;
     padding: 10px;
 }
 
@@ -91,31 +91,20 @@ blockquote {
         display: block;
     }
 
- .catalog-nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #212529; /* плотный тёмный фон */
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 0;
-    z-index: 999;
-}
+    .catalog-nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 200px;
+        padding: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
 
-.catalog-nav-links.show {
-    display: flex;
-}
-
-.catalog-nav-links a {
-    color: #fff;
-    padding: 15px 20px;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: #212529;
-    transition: background 0.3s;
-}
-
-.catalog-nav-links a:hover {
-    background-color: #343a40;
+    .catalog-nav-links.show {
+        display: flex;
+    }
 }
