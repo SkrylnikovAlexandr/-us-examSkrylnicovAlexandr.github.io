@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Форум интернет-магазина: обсуждение товаров, отзывов, новинок и скидок.">
+    <meta name="keywords" content="форум, интернет-магазин, покупки, скидки, отзывы, товары">
+    <meta name="author" content="Интернет-магазин Форум">
+    <title>Форум интернет-магазина</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <nav class="nav-container">
+    <img src="logo.png" alt="ShopTalk Forum" class="logo">
+
+    <!-- Кнопка-гамбургер -->
+    <span class="menu-toggle" onclick="toggleMenu()">☰ Меню</span>
+
+    <!-- Навигация -->
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Главная</a>
+        <a href="shop.html">Каталог</a>
+        <a href="forum.html">Форум</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="discounts.html">Скидки</a>
+        <a href="about.html">О нас</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="form.html" class="register-button">Регистрация</a>
+    </div>
+</nav>
+
+    
+    <div class="container">
+        <h1>Форум интернет-магазина</h1>
+        <p>Обсуждайте товары, оставляйте отзывы и делитесь лучшими скидками.</p>
+        
+        <h2>Темы форума:</h2>
+        <div id="posts-container">
+            <div class="post">
+                <h2>Тема: Лучшие смартфоны 2025 года</h2>
+                <p>Какой смартфон стоит купить в этом году?</p>
+                <small>Автор: Алекс | Дата: 05.03.2025</small>
+            </div>
+            
+            <div class="post">
+                <h2>Тема: Где найти самые выгодные скидки?</h2>
+                <p>Поделитесь секретами выгодных покупок.</p>
+                <small>Автор: Мария | Дата: 05.03.2025</small>
+            </div>
+        </div>
+        
+        <div class="new-post">
+            <h2>Создать новый пост</h2>
+            <input type="text" placeholder="Введите заголовок" id="title">
+            <textarea placeholder="Введите текст" id="content"></textarea>
+            <button onclick="addPost()">Опубликовать</button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", loadPosts);
+
+        function addPost() {
+            let title = document.getElementById("title").value;
+            let content = document.getElementById("content").value;
+
+            if (title.trim() === "" || content.trim() === "") {
+                alert("Пожалуйста, заполните все поля.");
+                return;
+            }
+
+            let post = {
+                id: Date.now(),
+                title: title,
+                content: content,
+                date: new Date().toLocaleDateString()
+            };
+
+            let posts = JSON.parse(localStorage.getItem("posts")) || [];
+            posts.unshift(post);
+            localStorage.setItem("posts", JSON.stringify(posts));
+            renderPosts();
+            
+            document.getElementById("title").value = "";
+            document.getElementById("content").value = "";
+        }
+
+        function loadPosts() {
+            renderPosts();
+        }
+
+        function renderPosts() {
+            let posts = JSON.parse(localStorage.getItem("posts")) || [];
+            let postsContainer = document.getElementById("posts-container");
+            posts.forEach(post => {
+                let postContainer = document.createElement("div");
+                postContainer.classList.add("post");
+                postContainer.innerHTML = `
+                    <h2>${post.title}</h2>
+                    <p>${post.content}</p>
+                    <small>Автор: Гость | Дата: ${post.date}</small>
+                    <button class="delete-btn" onclick="deletePost(${post.id})">&times;</button>
+                `;
+                postsContainer.appendChild(postContainer);
+            });
+        }
+
+        function deletePost(id) {
+            let posts = JSON.parse(localStorage.getItem("posts")) || [];
+            posts = posts.filter(post => post.id !== id);
+            localStorage.setItem("posts", JSON.stringify(posts));
+            renderPosts();
+        }
+
+  let likeCount = 0, dislikeCount = 0;
+
+  function increaseLikes() {
+      likeCount++;
+      document.getElementById("like-text").textContent = `Вы нажали “Мне нравится сайт” ${likeCount} раз.`;
+  }
+
+  function increaseDislikes() {
+      dislikeCount++;
+      document.getElementById("dislike-text").textContent = `Вы нажали “Мне не нравится сайт” ${dislikeCount} раз.`;
+  }
+
+  function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      menu.classList.toggle("show");
+  }
+
+    </script>
+</body>
+</html>
